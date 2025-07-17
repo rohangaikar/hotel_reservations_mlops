@@ -5,3 +5,5 @@ google-cloud-storage
 scikit-learn
 imbalanced-learn
 mlflow
+lightgbm
+flask
