@@ -33,7 +33,7 @@ pipeline{
 
         stage('Buidling and Pushing Docker Image to GCR'){
             steps{
-                withCredentials([file(credentialsId :'gcp-key'), variable:'GOOGLE_APPLICATION_CREDENTIALS']){
+                withCredentials([file(credentialsId :'gcp-key', variable:'GOOGLE_APPLICATION_CREDENTIALS')]){
                     script
                     echo 'Buidling and Pushing Docker Image to GCR.....'
                     sh '''
@@ -48,7 +48,7 @@ pipeline{
                     docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .
 
                     docker push gcr.io/${GCP_PROJECT}/ml-project:latest
-                    
+
                     '''
                 }
                
