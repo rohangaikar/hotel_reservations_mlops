@@ -68,6 +68,8 @@ pipeline{
 
                         gcloud config set project ${GCP_PROJECT}
 
+                        gcloud builds submit --tag gcr.io/${GCP_PROJECT}/ml-project:latest --platform=linux/amd64
+
                         gcloud run deploy ml-project \
                             --image=gcr.io/${GCP_PROJECT}/ml-project:latest \
                             --platform=managed \
