@@ -8,9 +8,9 @@ class CustomException(Exception):
     
     @staticmethod
     def get_detailed_error_message(error_message,error_detail:sys):
-        _ ,_ ,exc_tb = error_detail.exc_info()
-        file_name = exc_tb.tb_frame.f_code.co_filename 
-        line_number = exc_tb.tb_lineno
+        _ ,_ ,exc_tb = sys.exc_info()
+        file_name = exc_tb.tb_frame.f_code.co_filename if exc_tb else 'Unknown'
+        line_number = exc_tb.tb_lineno if exc_tb else 'Unknown'
         return f"Error in {file_name} , line {line_number} : {error_message}"
 
     def __str__(self):
