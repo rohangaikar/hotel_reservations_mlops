@@ -5,10 +5,8 @@ with open('requirements.txt') as f:
 
 setup(
     name = 'HOTEL-RESERVATION-PREDICTION',
-    version = 0.1,
+    version = "0.1",
     author = 'rvg93',
     packages = find_packages(),
-    package_dir={'': 'src'}, 
-    packages=find_packages(where='src'),
-    install_requires = requirements
+    install_requires = requirements,
 )
