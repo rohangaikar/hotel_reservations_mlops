@@ -68,7 +68,7 @@ pipeline{
 
                         gcloud config set project ${GCP_PROJECT}
 
-                        gcloud builds submit --tag gcr.io/${GCP_PROJECT}/ml-project:latest --platform=linux/amd64
+                        docker buildx build --platform linux/amd64 -t gcr.io/compact-arc-464706-r2/ml-project:latest --push .
 
                         gcloud run deploy ml-project \
                             --image=gcr.io/${GCP_PROJECT}/ml-project:latest \
