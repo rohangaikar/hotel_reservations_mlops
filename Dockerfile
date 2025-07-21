@@ -14,7 +14,7 @@ COPY . .
 
 RUN pip install --no-cache-dir -e .
 
-RUN pipeline/training_pipeline.py
+RUN python pipeline/training_pipeline.py
 
 EXPOSE 5000
 
